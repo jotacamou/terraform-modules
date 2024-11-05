@@ -1,0 +1,5 @@
+metric.type="monitoring.googleapis.com/uptime_check/check_passed"
+AND resource.type="uptime_url"
+AND (
+metric.labels.check_id=${join(" OR \n metric.labels.check_id=", formatlist("\"%s\"", uptime_check_id))}
+)
